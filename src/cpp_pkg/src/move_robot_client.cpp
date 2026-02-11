@@ -1,0 +1,20 @@
+#include "rclcpp/rclcpp.hpp"
+
+class MoveRobotClientNode : public rclcpp::Node 
+{
+public:
+    MoveRobotClientNode() : Node("node_name") 
+    {
+    }
+
+private:
+};
+
+int main(int argc, char **argv)
+{
+    rclcpp::init(argc, argv);
+    auto node = std::make_shared<MoveRobotClientNode>(); 
+    rclcpp::spin(node);
+    rclcpp::shutdown();
+    return 0;
+}

@@ -15,7 +15,7 @@
                 <box size="${base_length} ${base_width} ${base_height}" />
             </geometry>
             <origin xyz="0 0 ${base_height / 2.0}" rpy="0 0 0" />
-            <material name="grey" />
+            <material name="blue" />
         </visual>
         <collision>
             <geometry>
@@ -34,7 +34,7 @@
                     <cylinder radius="${wheel_radius}" length="${wheel_length}" />
                 </geometry>
                 <origin xyz="0 0 0" rpy="${pi / 2.0} 0 0" />
-                <material name="red" />
+                <material name="grey" />
             </visual>
             <collision>
                 <geometry>

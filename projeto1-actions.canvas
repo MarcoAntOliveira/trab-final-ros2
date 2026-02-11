@@ -1,0 +1,23 @@
+{
+	"nodes":[
+		{"id":"122f304c444d6311","type":"text","text":"[[Action client]]","x":-320,"y":-660,"width":160,"height":700,"color":"1"},
+		{"id":"d5d4e4c93f1ee13c","type":"text","text":"[[Action server]]","x":460,"y":-660,"width":140,"height":720,"color":"5"},
+		{"id":"0913b06e611a2b72","type":"text","text":"[[Robot status]]","x":-1420,"y":-560,"width":160,"height":60},
+		{"id":"f1bae2b6876b693d","type":"text","text":"","x":-1160,"y":-440,"width":180,"height":60},
+		{"id":"9da08cebe084c7dc","type":"text","text":"","x":-1420,"y":-300,"width":185,"height":60},
+		{"id":"173d048ea824f48c","x":0,"y":450,"width":250,"height":80,"type":"text","text":"Action server"},
+		{"id":"9e721d9f33a7eda6","x":-1105,"y":460,"width":250,"height":60,"type":"text","text":"[[cancel_move]]\ntopic"},
+		{"id":"dc1ca059d6d007c7","x":-620,"y":450,"width":250,"height":80,"type":"text","text":"Action client"},
+		{"id":"bb2556e5b4c3fc8d","x":-1195,"y":-240,"width":455,"height":520,"type":"text","text":"# Challenge\n- 1 create action definition\n- 2 action server with excute callback and\n feedback\n- 3 action client\n- 4 goal validation and goal policy\n- 5 cancel mechanism"}
+	],
+	"edges":[
+		{"id":"f5a7a8296c629020","fromNode":"0913b06e611a2b72","fromSide":"right","toNode":"f1bae2b6876b693d","toSide":"left"},
+		{"id":"28bfc24e4ae71e7e","fromNode":"122f304c444d6311","fromSide":"right","toNode":"d5d4e4c93f1ee13c","toSide":"left","color":"4","label":"send Goal -> Move to(x, y)"},
+		{"id":"f640956f426c00f7","fromNode":"122f304c444d6311","fromSide":"right","toNode":"d5d4e4c93f1ee13c","toSide":"bottom","color":"5","label":"Request Result\n(if goal accepted)"},
+		{"id":"30042df202fa4e52","fromNode":"d5d4e4c93f1ee13c","fromSide":"left","toNode":"122f304c444d6311","toSide":"bottom","color":"3","label":"Feedback"},
+		{"id":"568bdb1e7a47464b","fromNode":"122f304c444d6311","fromSide":"right","toNode":"d5d4e4c93f1ee13c","toSide":"top","color":"1","label":"Cancel Goal request"},
+		{"id":"43144afd773c2e02","fromNode":"9da08cebe084c7dc","fromSide":"right","toNode":"f1bae2b6876b693d","toSide":"left"},
+		{"id":"86f6e4c5ec382505","fromNode":"9e721d9f33a7eda6","fromSide":"right","toNode":"dc1ca059d6d007c7","toSide":"left"},
+		{"id":"5f60947d3f617158","fromNode":"dc1ca059d6d007c7","fromSide":"right","toNode":"173d048ea824f48c","toSide":"left","label":"cancel goal\nrequest"}
+	]
+}

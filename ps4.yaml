@@ -1,0 +1,14 @@
+teleop_twist_joy:
+  ros__parameters:
+    axis_linear:
+      x: 1        # Analógico esquerdo vertical
+    scale_linear:
+      x: 0.5
+
+    axis_angular:
+      yaw: 0      # Analógico esquerdo horizontal
+    scale_angular:
+      yaw: 1.0
+
+    enable_button: 5   # R1
+    enable_turbo_button: 4  # L1
