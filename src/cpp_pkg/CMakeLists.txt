@@ -10,6 +10,8 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(example_interfaces REQUIRED)
 find_package(proj1_interface REQUIRED)
+find_package( rclcpp_action  REQUIRED)
+
 
 
 add_executable(pub_cpp src/pub.cpp)
@@ -25,7 +27,7 @@ add_executable(battery src/battery.cpp)
 ament_target_dependencies(battery rclcpp proj1_interface)
 
 add_executable(move_client src/move_robot_client.cpp)
-ament_target_dependencies(move_client rclcpp proj1_interface)
+ament_target_dependencies(move_client rclcpp proj1_interface rclcpp_action)
 
 
 install(TARGETS

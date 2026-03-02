@@ -96,3 +96,5 @@ turtle:
 	ros2 run turtlesim turtlesim_node -ros-args -r __node:=my_turtle
 turtle_control:
 	ros2 run turtlesim turtle_teleop_key
+yaml_params:
+	ros2 run py_pkg pub  --ros-args --params-file /home/marco/projects/proj1/yaml_params/number_params.yaml

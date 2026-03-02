@@ -4,7 +4,7 @@ int64 velocity
 
 ---
 #Result
-int64 final_positionjj
+int64 final_position
 string message
 
 

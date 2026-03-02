@@ -1,0 +1,27 @@
+<launch>
+
+  <!-- C++ publisher 1 -->
+  <node pkg="cpp_pkg" exec="pub_cpp" name="pub1">
+    <remap from="number_publisher" to="/my_pub1"/>
+  </node>
+
+  <!-- C++ publisher 2 -->
+  <node pkg="cpp_pkg" exec="pub_cpp" name="pub2">
+    <remap from="number_publisher" to="/my_pub2"/>
+  </node>
+
+  <!-- Python counter 1 -->
+  <node pkg="py_pkg" exec="pub" name="counter1" namespace="/abc">
+    <remap from="number_publisher" to="/my_pub1"/>
+    <remap from="number_count2" to="/my_count2"/>
+    <param name="counter" value="6"/>
+  </node>
+
+  <!-- Python counter 2 -->
+  <node pkg="py_pkg" exec="pub" name="counter2">
+    <remap from="number_publisher" to="/my_pub2"/>
+    <remap from="number_count2" to="/my_count3"/>
+    <param name="counter" value="0"/>
+  </node>
+
+</launch>
