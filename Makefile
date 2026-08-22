@@ -4,6 +4,8 @@ SHELL := /bin/bash
 all: launch
 sensor: sensor_manager publisher_sensor
 pub: pub_cpp pub_py
+
+
 up: 
 	@echo "Atualizando workspace..."
 	source install/setup.bash
@@ -138,5 +140,29 @@ turtle_control:
 <<<<<<< HEAD
 yaml_params:
 	ros2 run py_pkg pub  --ros-args --params-file /home/marco/projects/proj1/yaml_params/number_params.yaml
+<<<<<<< HEAD
 =======
 >>>>>>> 1af9a0a (updates)
+=======
+
+fourier: bil_py
+	. up && ros2 run py_pkg fourier
+
+bil_cycles:
+	colcon build --packages-select lifecycle_cpp lifecycle_py  --symlink-install
+	. up
+
+clean_venv:
+# 1. Deactivate your current environment
+	deactivate
+
+# 2. Delete the current isolated environment
+# (Make sure you don't have any unsaved personal files inside the 'amb20' folder!)
+	rm -rf amb20
+
+# 3. Recreate it, allowing it to see system-wide packages (like ROS 2 libraries)
+	python3 -m venv amb20 --system-site-packages
+
+# 4. Reactivate it
+	source amb20/bin/activate
+>>>>>>> 6f382c6 (upload)

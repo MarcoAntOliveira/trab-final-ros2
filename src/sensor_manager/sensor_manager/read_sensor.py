@@ -3,17 +3,18 @@ from rclpy.node import Node
 
 import serial
 from example_interfaces.msg import Float32
+from example_interfaces.msg import String
 
 class SerialSensorNode(Node):
     def __init__(self):
         super().__init__('serial_sensor_node')
-
+        self.declare_parameter('serial_port', '/dev/ttyUSB0')
         self.pubx = self.create_publisher(Float32, 'sensor/linear/x', 10)
         self.puby = self.create_publisher(Float32, 'sensor/linear/y', 10)
         self.pubz = self.create_publisher(Float32, 'sensor/linear/z', 10)
-
+        serial_port = self.get_parameter('serial_port').get_parameter_value().string_value
         self.ser = serial.Serial(
-            port='/dev/ttyUSB0',
+            port=serial_port,
             baudrate=115200,
             timeout=0.1
         )

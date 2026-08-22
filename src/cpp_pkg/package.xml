@@ -3,13 +3,14 @@
 <package format="3">
   <name>cpp_pkg</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>Pacote C++ para o projeto de robótica</description>
   <maintainer email="marcoolivera096@gmail.com">marco</maintainer>
-  <license>TODO: License declaration</license>
+  <license>Apache License 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <depend>rclcpp</depend>
+  <depend>rclcpp_action</depend>
   <depend>example_interfaces</depend>
 <<<<<<< HEAD
   <depend>proj1_interface</depend>

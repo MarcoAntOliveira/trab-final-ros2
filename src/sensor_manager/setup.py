@@ -25,6 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
             'read_sensor = sensor_manager.read_sensor:main',
+            'control = sensor_manager.test_modelica :main',
         ],
     },
 )

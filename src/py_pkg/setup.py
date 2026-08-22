@@ -25,15 +25,23 @@ setup(
     entry_points={
         'console_scripts': [
 <<<<<<< HEAD
+<<<<<<< HEAD
              'pub = py_pkg.publisher:main',
+=======
+            'pub = py_pkg.number_publisher:main',
+>>>>>>> 6f382c6 (upload)
             'sub =py_pkg.subscriber:main',
             'panel = py_pkg.led_panel:main',
             'ekf_pub = py_pkg.ekf:main',
             'move = py_pkg.move_robot:main',
             'test= py_pkg.test:main',
+<<<<<<< HEAD
 =======
              'controller = py_pkg.velocity_controller:main',
 >>>>>>> 1af9a0a (updates)
+=======
+            'fourier= py_pkg.fourier:main',
+>>>>>>> 6f382c6 (upload)
         ],
     },
 )
