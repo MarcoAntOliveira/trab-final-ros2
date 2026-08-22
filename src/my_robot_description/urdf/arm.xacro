@@ -80,5 +80,9 @@
         <limit lower="0" upper="${pi/2}" effort="100" velocity="100" />
         <dynamics friction="0.3" damping="0.3" />
     </joint>
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 1af9a0a (updates)
 </robot>

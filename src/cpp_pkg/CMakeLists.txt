@@ -6,6 +6,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 
 # find dependencies
+<<<<<<< HEAD
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(example_interfaces REQUIRED)
@@ -38,4 +39,26 @@ install(TARGETS
   move_client
   DESTINATION lib/${PROJECT_NAME}
 )
+=======
+
+find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(example_interfaces REQUIRED)
+find_package(tf2_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(interfaces2 REQUIRED)
+
+add_executable(com_vel src/com_vel.cpp)
+ament_target_dependencies(com_vel rclcpp tf2_msgs geometry_msgs)
+
+add_executable(tests2 src/sub_test.cpp)
+ament_target_dependencies(tests2 rclcpp interfaces2)
+
+install(TARGETS
+  com_vel
+  tests2
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+>>>>>>> 1af9a0a (updates)
 ament_package()

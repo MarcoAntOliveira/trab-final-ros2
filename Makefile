@@ -1,5 +1,6 @@
 # Use bash em vez do sh padrãoc
 SHELL := /bin/bash
+<<<<<<< HEAD
 all: launch
 sensor: sensor_manager publisher_sensor
 pub: pub_cpp pub_py
@@ -9,18 +10,48 @@ up:
 	source /opt/ros/$(ROS_DISTRO)/setup.bash
 	source /home/marco/projects/proj1/install/setup.bash
 	
+=======
+.ONESHELL:
+
+all: launch
+
+atualizar: bil up launch2
+sensor: sensor_manager publisher_sensor
+up:
+	echo "Atualizando workspace..."
+	source /opt/ros/$(ROS_DISTRO)/setup.bash
+	source install/setup.bash
+
+>>>>>>> 1af9a0a (updates)
 
 bil:
 
 	@echo "Atualizando workspace..."
+<<<<<<< HEAD
 	cd ~/projects/proj1/ 
+=======
+	cd ~/projects/proj2/ 
+>>>>>>> 1af9a0a (updates)
 	colcon build
 	source install/setup.bash
 	source /opt/ros/$(ROS_DISTRO)/setup.bash
 launch: 
 	@echo "Lançando Gazebo..."
+<<<<<<< HEAD
 	source install/setup.bash && ros2 launch my_robot_bringup my_robot_gazebo.launch.xml
 
+=======
+	source install/setup.bash && ros2 launch my_robot_bringup my_robot_gazebo.launch.xml &
+	xterm -e "bash -c 'source /opt/ros/$(ROS_DISTRO)/setup.bash && ros2 run joy joy_node '" & 
+	xterm -e "bash -c 'source /opt/ros/$(ROS_DISTRO)/setup.bash && ros2 run teleop_twist_joy teleop_node --ros-args --params-file ps4_teleop.yaml'" & 
+	xterm -e "bash -c 'source /opt/ros/$(ROS_DISTRO)/setup.bash && ros2 topic echo /joy '" & 
+launch2: 
+	@echo "Lançando Gazebo..."
+	source install/setup.bash && ros2 launch my_robot_bringup mrm.launch.xml &
+display:
+	@echo "Lançando RViz2..."
+	source install/setup.bash && ros2 launch my_robot_description display.launch.xml
+>>>>>>> 1af9a0a (updates)
 move:
 	@echo "Abrindo Teleop em uma janela xterm independente..."
 	xterm -e "bash -c 'source /opt/ros/$(ROS_DISTRO)/setup.bash; source install/setup.bash; ros2 run teleop_twist_keyboard teleop_twist_keyboard; exec bash'" &
@@ -52,6 +83,7 @@ bil_py:
 bil_cpp:
 	colcon build --packages-select cpp_pkg --symlink-install
 	source install/setup.bash
+<<<<<<< HEAD
 bil_interfaces:
 	colcon build --packages-select proj1_interface --symlink-install
 	source install/setup.bash
@@ -83,6 +115,13 @@ service_pub2:
 	ros2 service call /reset_counter example_interfaces/srv/SetBool "{data: true}"
 
 
+=======
+bil_display:
+	colcon build --packages-select my_robot_description --symlink-install
+	source install/setup.bash
+count_py:
+	source install/setup.bash && ros2 run py_pkg pub
+>>>>>>> 1af9a0a (updates)
 control:
 	source install/setup.bash && ros2 run joy joy_node
 	ros2 topic echo /joy
@@ -96,5 +135,8 @@ turtle:
 	ros2 run turtlesim turtlesim_node -ros-args -r __node:=my_turtle
 turtle_control:
 	ros2 run turtlesim turtle_teleop_key
+<<<<<<< HEAD
 yaml_params:
 	ros2 run py_pkg pub  --ros-args --params-file /home/marco/projects/proj1/yaml_params/number_params.yaml
+=======
+>>>>>>> 1af9a0a (updates)

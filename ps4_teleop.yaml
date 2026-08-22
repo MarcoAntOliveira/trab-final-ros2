@@ -1,0 +1,34 @@
+teleop_twist_joy:
+  ros__parameters:
+
+    # Segurança (equivalente a "anything else : stop")
+    require_enable_button: true
+    enable_button: 5        # R1
+
+    # -------- MOVIMENTO NORMAL (igual I J K L) --------
+    axis_linear:
+      x: 1  
+      y: 2                  # Analógico esquerdo vertical
+    axis_angular:
+      yaw: 0                # Analógico esquerdo horizontal
+
+    scale_linear:
+      x: 0.5                # speed 0.50
+    scale_angular:
+      yaw: 1.0              # turn 1.00
+   
+    # -------- BOTÕES DE MODO --------
+    enable_turbo_button: 7  # R2 (boost)
+    enable_slow_button: 6   # L2 (precisão)
+
+    scale_linear_turbo:
+      x: 1.0
+      y: 1.0
+    scale_angular_turbo:
+      yaw: 2.0
+
+    scale_linear_slow:
+      x: 0.2
+      y: 0.2
+    scale_angular_slow:
+      yaw: 0.4
